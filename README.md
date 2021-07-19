@@ -8,5 +8,5 @@
 - express
 - express-validator
 - mongoose
-
+- deploy en heroku
 
