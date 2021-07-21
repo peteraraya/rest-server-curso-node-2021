@@ -35,8 +35,8 @@ const UsuarioSchema = Schema({
 // * Tiene que ser una función normal si no no funcionará*
 UsuarioSchema.methods.toJSON = function () {
   // Ocultamos campos
-  const { __v, password, ...usuario } = this.toObject();
-
+  const { __v, password, _id, ...usuario } = this.toObject();
+  usuario.uid = _id;
   return usuario;
 
 }

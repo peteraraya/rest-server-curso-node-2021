@@ -21,7 +21,6 @@ const usuariosGet = async (req = request, res = response) => {
   // // total de registros
   // const total = await Usuario.countDocuments(query);
 
-
   // Solución para enviar una colección de promesas
   const [total, usuarios] = await Promise.all([
     Usuario.countDocuments(query),
@@ -107,10 +106,14 @@ const usuariosDelete = async (req = request, res = response) => {
 
   // se recomienda cambiar estado por temas de integridad
   const usuario = await Usuario.findByIdAndUpdate(id, { estado: false });
+  // const usuarioAutenticado = req.usuario;
 
-  res.status(200).json({
-    usuario
-  });
+  // res.status(200).json({
+  //   usuario,
+  //   usuarioAutenticado
+  // });
+
+  res.json(usuario);
 };
 
 

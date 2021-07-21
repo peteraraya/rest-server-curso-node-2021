@@ -9,4 +9,5 @@
 - express-validator
 - mongoose
 - deploy en heroku
+- jsonwebtoken
 
