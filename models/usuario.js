@@ -44,12 +44,3 @@ UsuarioSchema.methods.toJSON = function () {
 
 module.exports = model('Usuario', UsuarioSchema);
 
-/** Esto vamos
- * nombre : 'kdjdkjdlsf,
- * correo : 'hsdfjkdhksf@dfkjdfk.com,
- * password :'437382678342',
- * img:'jsdkjdskdfjksl',
- * rol:234234,
- * estado:false
- * google:false
- */

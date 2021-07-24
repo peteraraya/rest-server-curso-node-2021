@@ -67,10 +67,10 @@ const usuariosPost = async (req = request, res = response) => {
 const usuariosPut = async (req = request, res = response) => {
 
   const { id } = req.params;
-  // extraigo ( pass, google, correo) que no sufriran modificaniones al actualizar
+  // extraigo ( pass, google, correo) que no sufrirán modificaciones al actualizar
   const { _id, password, google, correo, ...resto } = req.body;
 
-  // TODO: validar contra bd
+  // validar contra bd
   if (password) {
     // Encriptamos la contraseña 
     const salt = bcryptjs.genSaltSync();

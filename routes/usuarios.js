@@ -4,7 +4,7 @@ const { Router } = require('express');
 const { check } = require('express-validator');
 const { usuariosGet, usuariosPost, usuariosPut, usuariosPatch, usuariosDelete } = require('../controllers/usuarios');
 const { esRolValido, emailExiste, existeUsuarioPorId } = require('../helpers/db-validators');
-// Optimización de importaciones
+// optimización de importaciones
 const {
   validarCampos, validarJWT, esAdminRole, tieneRole
 } = require('../middlewares')
@@ -24,7 +24,7 @@ router.post('/', [
   check('correo', 'El correo no es válido').isEmail(),
   check('correo').custom(emailExiste),
   // check('rol', 'No es un rol válido').isIn(['ADMIN_ROLE', 'USER_ROLE']),
-  check('rol').custom(esRolValido), // como es un callback con un argumento se puede obiar
+  check('rol').custom(esRolValido), // como es un callback con un argumento se puede obviar
   validarCampos
 ], usuariosPost);
 
@@ -32,7 +32,7 @@ router.post('/', [
 router.put('/:id', [
   check('id', 'No es un id válido').isMongoId(),
   check('id').custom(existeUsuarioPorId),
-  check('rol').custom(esRolValido), // como es un callback con un argumento se puede obiar
+  check('rol').custom(esRolValido), // como es un callback con un argumento se puede obviar
   validarCampos
 ], usuariosPut);
 
